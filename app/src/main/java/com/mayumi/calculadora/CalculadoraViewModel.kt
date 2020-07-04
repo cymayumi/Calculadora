@@ -9,16 +9,20 @@ class CalculadoraViewModel : ViewModel(){
     //precisamos de uma maneira da ViewModel comunicar de volta para o UI Controller quando alguma informação for alterada.
     //LiveData is an observable data holder class that is lifecycle-aware.
 
-     val soma = MutableLiveData<Int>()
+     val soma = MutableLiveData<Float>()
     //"soma" estará sendo observado (LiveData), quando este objeto for modificado, nossos observadores (UI) saberão.
 
     init {
         Log.i("CalculadoraViewModel", "Criação da ViewModel da activity Calculadora!")
-        soma.value = 0
+        soma.value = 0f
     }
 
     fun somar(a:String, b:String){
-        soma.value = Integer.parseInt(a) + Integer.parseInt(b)
+        soma.value = a.toFloat() + b.toFloat()
+    }
+
+    fun limparSoma(){
+        soma.value = 0f
     }
 
     override fun onCleared() {

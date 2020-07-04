@@ -20,11 +20,17 @@ class CalculadoraActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this).get(CalculadoraViewModel::class.java)
 
 
-        btn_igual.setOnClickListener {
+        btn_calcular.setOnClickListener {
             var aNum = numA.text.toString()
             var bNum = numB.text.toString()
 
             viewModel.somar(aNum, bNum)
+        }
+
+        btn_limpar.setOnClickListener {
+            numA.setText("")
+            numB.setText("")
+            viewModel.limparSoma()
         }
 
         //observa a "soma", caso tenha mudanças ela atualiza a UI
