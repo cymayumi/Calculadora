@@ -1,11 +1,11 @@
-package com.mayumi.calculadora
+package com.mayumi.calculadora.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.EditText
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.mayumi.calculadora.R
 import kotlinx.android.synthetic.main.activity_calculadora.*
 
 class CalculadoraActivity : AppCompatActivity() {
@@ -18,7 +18,6 @@ class CalculadoraActivity : AppCompatActivity() {
 
         Log.i("CalculadoraActivity", "Chamei o ViewModelProviders!")
         viewModel = ViewModelProviders.of(this).get(CalculadoraViewModel::class.java)
-
 
         btn_calcular.setOnClickListener {
             var aNum = numA.text.toString()
