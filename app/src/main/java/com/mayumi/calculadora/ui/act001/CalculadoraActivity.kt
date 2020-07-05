@@ -1,4 +1,4 @@
-package com.mayumi.calculadora.ui
+package com.mayumi.calculadora.ui.act001
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
